@@ -1,7 +1,9 @@
+import Banner from './Banner'
+
 const Home = () => {
     return (
         <div>
-            <h2>Eta holo home</h2>
+            <Banner></Banner>
         </div>
     );
 };
