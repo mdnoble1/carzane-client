@@ -54,7 +54,7 @@ const Navbar = () => {
 
   return (
     <nav className="lg:mt-10 bg-white lg:mx-16 lg:rounded-2xl lg:drop-shadow-2xl">
-      <div className="flex justify-between items-center pl-6 lg:pr-10 py-4 lg:py-8">
+      <div className="flex justify-between items-center pl-6 lg:pr-16 py-4 lg:py-8">
         <div className="dropdown lg:hidden">
           <label tabIndex={0} className="text-3xl font-extrabold">
             <CgMenuLeft></CgMenuLeft>
