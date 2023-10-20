@@ -95,7 +95,7 @@ const Navbar = () => {
                       </span>
                       <button
                         onClick={handleLogOut}
-                        className="btn btn-xs btn-outline"
+                        className="btn btn-xs btn-outline text-[#ea001e]"
                       >
                         Logout
                       </button>
@@ -114,7 +114,7 @@ const Navbar = () => {
             {navLinks}
           </ul>
         </div>
-        <div className={ user ? "block" : "hidden"}>
+        <div className={`hidden lg:block`}>
           {user && (
             <>
               <div className="flex items-center justify-between gap-4">
@@ -132,9 +132,11 @@ const Navbar = () => {
                   <span className="block font-semibold text-sm text-center">
                     {user.displayName}
                   </span>
+                </div>
+                <div>
                   <button
                     onClick={handleLogOut}
-                    className="btn btn-xs btn-outline"
+                    className="btn btn-md btn-outline text-[#ea001e]"
                   >
                     Logout
                   </button>

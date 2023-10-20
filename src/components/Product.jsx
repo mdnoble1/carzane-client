@@ -26,7 +26,7 @@ const Product = ({ product }) => {
         </div>
       </div>
       <div className="flex items-center justify-between px-16 mb-4">
-        <button className="btn rounded-lg font-semibold text-xl normal-case text-white bg-[#ea001e] hover:bg-red-400 hover:text-black">
+        <button className="btn rounded-lg font-semibold text-xl normal-case  text-white bg-[#ea001e] hover:bg-red-400 hover:text-black">
           Details
         </button>
         <Link to="/addProducts">
