@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }) => {
   const { productName, brandName, type, price, rating, image } = product;
@@ -28,9 +29,11 @@ const Product = ({ product }) => {
         <button className="btn rounded-lg font-semibold text-xl normal-case text-white bg-[#ea001e] hover:bg-red-400 hover:text-black">
           Details
         </button>
-        <button className="btn rounded-lg font-semibold text-xl normal-case text-white bg-[#ea001e] hover:bg-red-400 hover:text-black">
-          Update
-        </button>
+        <Link to="/addProducts">
+          <button className="btn rounded-lg font-semibold text-xl normal-case text-white bg-[#ea001e] hover:bg-red-400 hover:text-black">
+            Update
+          </button>
+        </Link>
       </div>
     </div>
   );
