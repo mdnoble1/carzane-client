@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import toast from "react-hot-toast";
+import Swal from 'sweetalert2'
 
 const Login = () => {
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
@@ -19,7 +19,7 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    console.log(email, password);
+    // console.log(email, password);
 
     // log in user from firebase
 
@@ -30,7 +30,12 @@ const Login = () => {
         navigate("/");
       })
       .catch((error) => {
-        toast.error("Email and Password Dosen't Match");
+        Swal.fire({
+          title: 'Error!',
+          text: "Email and Password Dosen't Match",
+          icon: 'error',
+          confirmButtonText: "Let's Try Agin"
+        })
       });
   };
 
@@ -41,7 +46,12 @@ const Login = () => {
         navigate("/");
       })
       .catch((error) => {
-        toast.error("Email and Password Dosen't Match");
+        Swal.fire({
+          title: 'Error!',
+          text: "Email and Password Dosen't Match",
+          icon: 'error',
+          confirmButtonText: "Let's Try Agin"
+        })
       });
   };
 

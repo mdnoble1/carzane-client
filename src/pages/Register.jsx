@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import toast from "react-hot-toast";
+import Swal from 'sweetalert2'
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
@@ -22,13 +22,28 @@ const Register = () => {
     const password = e.target.password.value;
 
     if (password.length < 6) {
-      toast.error("Password Must Contain 6 Characters");
+      Swal.fire({
+        title: 'Error!',
+        text: "Password Must Contain 6 Characters",
+        icon: 'error',
+        confirmButtonText: "Let's Try Agin"
+      })
       return;
     } else if (!/[A-Z]/.test(password)) {
-      toast.error("Password Must Contain an Uppercase");
+      Swal.fire({
+        title: 'Error!',
+        text: "Password Must Contain an Uppercase",
+        icon: 'error',
+        confirmButtonText: "Let's Try Agin"
+      })
       return;
     } else if (!/.*[!@#$%^&*()_+{}[\]:;<>,.?~\\-].*/.test(password)) {
-      toast.error("Password Must Contain a Special Character");
+      Swal.fire({
+        title: 'Error!',
+        text: "Password Must Contain a Special Character",
+        icon: 'error',
+        confirmButtonText: "Let's Try Agin"
+      })
       return;
     }
 

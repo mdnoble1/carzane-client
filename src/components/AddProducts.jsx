@@ -1,4 +1,47 @@
+import Swal from 'sweetalert2'
+
+
 const AddProducts = () => {
+
+    const handleAddProduct = e => {
+        e.preventDefault();
+
+        const productName = e.target.productName.value;
+        const brandName = e.target.brandName.value;
+        const type = e.target.type.value;
+        const price = e.target.price.value;
+        const rating = e.target.rating.value;
+        const image = e.target.image.value;
+        const description = e.target.description.value;
+
+        const newProduct = { productName , brandName , type , price , rating , image , description }
+
+
+        // console.log(newProduct)
+
+        fetch("http://localhost:5000/products" , {
+            method: 'POST',
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(newProduct)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Product Added Successfully!',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+                }
+            })
+    }
+
+
+
   return (
     <div className="lg:pb-12 drop-shadow-2xl">
       <div className="lg:w-3/4 bg-[#ea001e] mx-auto pt-16 lg:pt-32 lg:p-1 lg:rounded-b-md lg:mt-12">
@@ -7,7 +50,7 @@ const AddProducts = () => {
         </h2>
         <div className="py-12 lg:py-16 bg-white rounded-t-3xl rounded-b-sm lg:mt-12">
           <div className="border border-[#ea001e] w-10/12 mx-auto mb-6"></div>
-          <form className="card-body lg:w-3/4 mx-auto">
+          <form onSubmit={handleAddProduct} className="card-body lg:w-3/4 mx-auto">
             <div className="lg:flex gap-10">
               {/* left side */}
               <div className="lg:w-1/2">
@@ -19,7 +62,7 @@ const AddProducts = () => {
                     </span>
                   </label>
                   <input
-                    name="name"
+                    name="productName"
                     type="text"
                     placeholder="Enter Product Name"
                     className="input input-bordered rounded-lg bg-gray-100"
@@ -52,8 +95,9 @@ const AddProducts = () => {
                   <input
                     name="type"
                     type="text"
-                    placeholder="Enter Product Type"
+                    placeholder="'Car'"
                     className="input input-bordered rounded-lg bg-gray-100"
+                    defaultValue={"Car"}
                     required
                   />
                 </div>
