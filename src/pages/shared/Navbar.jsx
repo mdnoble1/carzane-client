@@ -31,22 +31,32 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink
+          to="/addProducts"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#ea001e] underline" : ""
+          }
+        >
+          Add Product
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/cart"
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "text-[#ea001e] underline" : ""
+          }
+        >
+          My Cart
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
           to="/login"
           className={({ isActive, isPending }) =>
             isPending ? "pending" : isActive ? "text-[#ea001e] underline" : ""
           }
         >
           Login
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/register"
-          className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? "text-[#ea001e] underline" : ""
-          }
-        >
-          Register
         </NavLink>
       </li>
     </>
