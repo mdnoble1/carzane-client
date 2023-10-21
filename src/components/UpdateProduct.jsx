@@ -24,7 +24,7 @@ const UpdateProduct = () => {
 
         
 
-        fetch(`http://localhost:5000/products/${_id}` , {
+        fetch(`https://carzane-server-pcp4fh07l-md-nobles-projects.vercel.app/products/${_id}` , {
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'

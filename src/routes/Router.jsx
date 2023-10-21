@@ -21,7 +21,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/brands')
+                loader: () => fetch('https://carzane-server-pcp4fh07l-md-nobles-projects.vercel.app/brands')
             },
             {
                 path: "/login",
@@ -42,12 +42,12 @@ const router = createBrowserRouter([
             {
                 path: "/brands/:brandName",
                 element: <Products></Products>,
-                loader: () => fetch(`http://localhost:5000/products`)
+                loader: () => fetch(`https://carzane-server-pcp4fh07l-md-nobles-projects.vercel.app/products`)
             },
             {
                 path: "/products/:id",
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ( {params} ) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ( {params} ) => fetch(`https://carzane-server-pcp4fh07l-md-nobles-projects.vercel.app/products/${params.id}`)
             },
             {
                 path: "/cart",
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
             {
                 path: '/updateProduct/:id',
                 element: <PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
-                loader: ( {params} ) => fetch(`http://localhost:5000/products/${params.id}`)
+                loader: ( {params} ) => fetch(`https://carzane-server-pcp4fh07l-md-nobles-projects.vercel.app/products/${params.id}`)
             }
         ]
     }

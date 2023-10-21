@@ -19,7 +19,7 @@ const AddProducts = () => {
 
         // console.log(newProduct)
 
-        fetch("http://localhost:5000/products" , {
+        fetch("https://carzane-server-pcp4fh07l-md-nobles-projects.vercel.app/products" , {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'
