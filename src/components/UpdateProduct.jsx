@@ -6,9 +6,9 @@ const UpdateProduct = () => {
 
     const product = useLoaderData();
 
-    const {  productName, brandName, type, price, rating, image, description } = product;
+    const { _id, productName, brandName, type, price, rating, image, description } = product;
 
-    const handleAddProduct = e => {
+    const handleUpdateProduct = e => {
         e.preventDefault();
 
         const productName = e.target.productName.value;
@@ -19,30 +19,35 @@ const UpdateProduct = () => {
         const image = e.target.image.value;
         const description = e.target.description.value;
 
-        const newProduct = { productName , brandName , type , price , rating , image , description }
+        const updatedProduct = { productName , brandName , type , price , rating , image , description }
 
 
-        // console.log(newProduct)
+        
 
-        fetch("http://localhost:5000/products" , {
-            method: 'POST',
+        fetch(`http://localhost:5000/products/${_id}` , {
+            method: 'PUT',
             headers: {
                 'content-type' : 'application/json'
             },
-            body: JSON.stringify(newProduct)
+            body: JSON.stringify(updatedProduct)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if(data.insertedId){
+                if(data.modifiedCount > 0){
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Product Added Successfully!',
+                        text: 'Product Updated Successfully!',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                       })
+                      
                 }
+                
+                
             })
+
+            
     }
 
 
@@ -55,7 +60,7 @@ const UpdateProduct = () => {
         </h2>
         <div className="py-12 lg:py-16 bg-white rounded-t-3xl rounded-b-sm lg:mt-12">
           <div className="border border-[#ea001e] w-10/12 mx-auto mb-6"></div>
-          <form onSubmit={handleAddProduct} className="card-body lg:w-3/4 mx-auto">
+          <form onSubmit={handleUpdateProduct} className="card-body lg:w-3/4 mx-auto">
             <div className="lg:flex gap-10">
               {/* left side */}
               <div className="lg:w-1/2">
@@ -179,7 +184,7 @@ const UpdateProduct = () => {
               </div>
               <div className="form-control mt-6">
               <button className="btn rounded-lg font-semibold text-xl normal-case text-white bg-[#ea001e] hover:bg-red-400 hover:text-black">
-                Add Product
+                Update Product
               </button>
             </div>
             </div>
