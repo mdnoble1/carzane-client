@@ -5,6 +5,9 @@ const Products = () => {
 
     const products = useLoaderData();
 
+    // const id = useParams()
+    // console.log(typeof(id))
+
     return (
         <div className="lg:w-1/2 mx-auto grid lg:grid-cols-2 gap-16 py-16">
             {

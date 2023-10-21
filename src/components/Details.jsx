@@ -6,7 +6,8 @@ import { NavLink, useLoaderData } from "react-router-dom";
 const Details = () => {
   const detail = useLoaderData();
 
-  console.log(detail);
+
+  // console.log(detail);
 
   return (
     <div className="py-16">
