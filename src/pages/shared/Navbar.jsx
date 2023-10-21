@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
 import { CgMenuLeft } from "react-icons/cg";
 import logo from "../../assets/carzane.png";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);

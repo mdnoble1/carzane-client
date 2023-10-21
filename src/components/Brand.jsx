@@ -10,7 +10,7 @@ const Brand = ({ brand }) => {
 
 
   return (
-    <NavLink to={`/products/${brandName}`}>
+    <NavLink to={`/brands/${brandName}`}>
       <div className="w-48 rounded-b-xl border-black border-b-2  drop-shadow-2xl mx-auto hover:cursor-pointer hover:border-[#ea001e] hover:border-2 text-black hover:text-[#ea001e]">
       <div>
         <img className="w-fit mx-auto mb-4 mt-2 rounded-t-2xl" src={image} alt="brandImage" />
