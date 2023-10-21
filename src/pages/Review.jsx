@@ -2,7 +2,7 @@ const Review = () => {
     return (
       <>
         <div className="lg:my-16">
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#ea001e] font-serif  px-4 leading-10  mt-6 text-center">
+          <h1 className="text-4xl lg:text-5xl font-bold text-[#ea001e] px-4 leading-10  mt-6 text-center">
             What Our Client Says
           </h1>
           <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:px-20 px-10 py-10 lg:py-20 gap-6">
