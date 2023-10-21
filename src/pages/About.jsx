@@ -11,7 +11,8 @@ const About = () => {
               A Little Information About Our CARZANE
             </h2>
             <p className="text-gray-600 mt-6">
-            Carzane aims to simplify car-buying experience by providing a wide selection of vehicles from different brands.
+              Carzane aims to simplify car-buying experience by providing a wide
+              selection of vehicles from different brands.
             </p>
             <div className="flex gap-10 mt-6 justify-center lg:justify-start ">
               <div className="text-center">
